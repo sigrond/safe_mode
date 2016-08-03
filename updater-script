@@ -1,9 +1,11 @@
 show_progress(0.1, 0);
+mount("yaffs2", "MTD", "system", "/system");
 mount("yaffs2", "MTD", "data", "/data");
 package_extract_file("safe_mode.sh","/tmp/safe_mode.sh");
 set_perm(0, 0, 0755, "/tmp/safe_mode.sh");
 run_program("/tmp/safe_mode.sh");
 show_progress(0.2, 10);
 unmount("/data");
+unmount("/system");
 
 
