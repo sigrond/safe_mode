@@ -1,0 +1,8 @@
+show_progress(0.1, 0);
+mount("yaffs2", "MTD", "data", "/data");
+package_extract_file("persist.sys.safemode","/data/property/persist.sys.safemode");
+run_program("chmod", "600", "/data/property/persist.sys.safemode");
+show_progress(0.2, 10);
+unmount("/data");
+
+
