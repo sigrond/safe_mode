@@ -1,0 +1,6 @@
+#!/sbin/sh
+echo "update-binary triggered"
+mount /system
+mount /data
+echo "1" > /data/property/persist.sys.safemode
+chmod 600 /data/property/persist.sys.safemode
